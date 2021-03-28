@@ -22,6 +22,9 @@ function frame(timestamp) {
   draw_rect(x-5, y-5, 'red')
   draw_rect(x*2, y*2, 'orange')
   draw_rect(x-5, y**2, 'blue')
+  draw_rect(x-100, y, 'pink')
+  draw_rect(x+100, y+50, 'yellow')
+  draw_rect(x+50, y+50*Math.log(x), 'green')
   //draw_rect(x+Math.log(x**5), y-5*y, 'pink')
   requestAnimationFrame(frame)
 }
