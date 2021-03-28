@@ -7,14 +7,22 @@ let animationMilliseconds = 5000
 function richardsCurve(lowerLimit, upperLimit, growthRate, t) {
   return lowerLimit + (upperLimit-lowerLimit)/(1+Math.exp(-1*growthRate*t))
 }
-
+function draw_rect(x,y, color){
+  ctx.beginPath();
+  ctx.fillStyle = color
+  ctx.fillRect(x, y, 10, 10)
+  ctx.closePath();
+  ctx.stroke();
+}
 function frame(timestamp) {
   ctx.clearRect(0, 0, canvasElt.width, canvasElt.height)
-
   let p = (timestamp % animationMilliseconds)/animationMilliseconds
   let x = 10 + 480*p
   let y = richardsCurve(10, 490, 5, 2*(p-0.5))
-  ctx.fillRect(x-5, y-5, 10, 10)
+  draw_rect(x-5, y-5, 'red')
+  draw_rect(x*2, y*2, 'orange')
+  draw_rect(x-5, y**2, 'blue')
+  //draw_rect(x+Math.log(x**5), y-5*y, 'pink')
   requestAnimationFrame(frame)
 }
 
