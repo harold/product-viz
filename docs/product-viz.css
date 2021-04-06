@@ -1,6 +1,11 @@
 body {background: #222}
 
-canvas {
+#app {
+    width: 800px;
     display: block;
     margin: 0 auto;
+}
+
+canvas {
+    border: solid 1px #555;
 }
